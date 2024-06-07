@@ -122,9 +122,11 @@ async def account_login(bot: Client, m: Message):
     await input6.delete(True)
     await editable.delete()
 
-    thumb = raw_text6
-    if thumb.startswith("http://") or thumb.startswith("https://"):
-        thumb = await helper.download(thumb, "thumb.jpg") 
+    thumb_url = raw_text6
+    thumb = None
+    if thumb_url.startswith("http://") or thumb_url.startswith("https://"):
+        thumb = await helper.download(thumb_url, "thumb.jpg") 
+        if thumb is not None:
         thumb = "thumb.jpg"
     else:
         thumb = "no"
