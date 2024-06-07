@@ -6,6 +6,7 @@ import time
 import asyncio
 import requests
 import subprocess
+import wget
 import core as helper
 from utils import progress_bar
 from vars import api_id, api_hash, bot_token
@@ -126,8 +127,7 @@ async def account_login(bot: Client, m: Message):
     thumb = None
 
 if thumb_url.startswith("http://") or thumb_url.startswith("https://"):
-    thumb = await helper.download(thumb_url, "thumb.jpg") 
-    if thumb is not None:
+    wget.download(thumb_url, f"./downloads/{m.chat.id}/thumb.jpg")
         thumb = "thumb.jpg"
     else:
         thumb = "no"
