@@ -40,27 +40,30 @@ async def restart_handler(_, m: Message):
 
 @bot.on_message(filters.command(["txt"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text('SEND ME TEXT TO CONVERT INTO TXT FILE⚡️')
-    input: Message = await bot.listen(editable.chat.id)
-    raw_text = input.text
-    await input.delete(True)
-    
-    await editable.edit("Now send the file title")
-    input0: Message = await bot.listen(editable.chat.id)
-    raw_text0 = input0.text
-    await input0.delete(True)
-    await editable.delete()
+    try:
+        editable = await m.reply_text('SEND ME TEXT TO CONVERT INTO TXT FILE⚡️')
+        input_msg = await bot.listen(editable.chat.id)
+        raw_text = input_msg.text
+        await input_msg.delete(True)
+        
+        await editable.edit("Now send the file title")
+        input_msg = await bot.listen(editable.chat.id)
+        raw_text0 = input_msg.text
+        await input_msg.delete(True)
+        await editable.delete()
 
-    path = f"./downloads/{m.chat.id}"
-    
-    file_name = f"{raw_text0}.txt"
-    
-    with open(file_name, "w") as file:
-        file.write(raw_text)
-    
-    await bot.send_document(chat_id=m.chat.id, document=file_name, caption="TXT File Converted by @mradarshr Bot")
-    os.remove(file_name)
-    except await m.reply_text('Failed')
+        path = f"./downloads/{m.chat.id}"
+        
+        file_name = f"{raw_text0}.txt"
+        
+        with open(file_name, "w") as file:
+            file.write(raw_text)
+        
+        await bot.send_document(chat_id=m.chat.id, document=open(file_name, "rb"), caption="TXT File Converted by @mradarshr Bot")
+        os.remove(file_name)
+    except Exception as e:
+        await m.reply_text('Failed: ' + str(e))
+
 
 @bot.on_message(filters.command(["babu"]))
 async def account_login(bot: Client, m: Message):
