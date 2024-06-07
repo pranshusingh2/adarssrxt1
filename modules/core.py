@@ -200,7 +200,7 @@ async def send_vid(bot: Client, m: Message,cc,filename,thumb,name,prog):
         if thumb == "no":
             thumbnail = f"{filename}.jpg"
         else:
-            thumbnail = thumb
+            thumbnail = "thumb.jpg"
     except Exception as e:
         await m.reply_text(str(e))
 
