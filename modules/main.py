@@ -60,10 +60,11 @@ async def account_login(bot: Client, m: Message):
     
     await bot.send_document(chat_id=m.chat.id, document=file_name, caption="TXT File Converted by @mradarshr Bot")
                     os.remove(file_name)
-                except FloodWait as e:
-                    await m.reply_text(str(e))
-                    time.sleep(e.x)
-                    continue
+    except:
+        FloodWait as e:
+        await m.reply_text(str(e))
+        time.sleep(e.x)
+        continue
 
 @bot.on_message(filters.command(["babu"]))
 async def account_login(bot: Client, m: Message):
