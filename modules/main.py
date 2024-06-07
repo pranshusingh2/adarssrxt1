@@ -124,9 +124,10 @@ async def account_login(bot: Client, m: Message):
 
     thumb_url = raw_text6
     thumb = None
-    if thumb_url.startswith("http://") or thumb_url.startswith("https://"):
-        thumb = await helper.download(thumb_url, "thumb.jpg") 
-        if thumb is not None:
+
+if thumb_url.startswith("http://") or thumb_url.startswith("https://"):
+    thumb = await helper.download(thumb_url, "thumb.jpg") 
+    if thumb is not None:
         thumb = "thumb.jpg"
     else:
         thumb = "no"
