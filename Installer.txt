@@ -19,5 +19,6 @@ motor
 aiohttp==3.9.5
 aiofiles
 pytz
+wget
 umongo==3.1.0
 speedtest-cli
