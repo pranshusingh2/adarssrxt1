@@ -54,16 +54,12 @@ async def account_login(bot: Client, m: Message):
     path = f"./downloads/{m.chat.id}"
     
     file_name = f"{raw_text0}.txt"
-    try:
+    
     with open(file_name, "w") as file:
         file.write(raw_text)
     
     await bot.send_document(chat_id=m.chat.id, document=file_name, caption="TXT File Converted by @mradarshr Bot")
     os.remove(file_name)
-    except FloodWait as e:
-        await m.reply_text(str(e))
-        time.sleep(e.x)
-    continue
 
 @bot.on_message(filters.command(["babu"]))
 async def account_login(bot: Client, m: Message):
