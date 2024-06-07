@@ -51,7 +51,7 @@ async def account_login(bot: Client, m: Message):
     await input6.delete(True)
     await editable.delete()
 
-    path = f"./downloads/{m.chat.id
+    path = f"./downloads/{m.chat.id}"
     
     file_name = f"{raw_text0}.txt"
     try:
