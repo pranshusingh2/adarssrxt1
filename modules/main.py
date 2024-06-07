@@ -56,7 +56,7 @@ async def account_login(bot: Client, m: Message):
     file_name = f"{raw_text0}.txt"
     try:
         with open(file_name, "w") as file:
-    file.write(raw_text)
+            file.write(raw_text)
     
     await bot.send_document(chat_id=m.chat.id, document=file_name, caption="TXT File Converted by @mradarshr Bot")
                     os.remove(file_name)
