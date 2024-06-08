@@ -125,9 +125,8 @@ async def account_login(bot: Client, m: Message):
 
     thumb_url = raw_text6
     thumb = None
-
-if thumb_url.startswith("http://") or thumb_url.startswith("https://"):
-    wget.download(thumb_url, f"./downloads/{m.chat.id}/thumb.jpg")
+    if thumb_url.startswith("http://") or thumb_url.startswith("https://"):
+        wget.download(thumb_url, f"./downloads/{m.chat.id}/thumb.jpg")
         thumb = "thumb.jpg"
     else:
         thumb = "no"
