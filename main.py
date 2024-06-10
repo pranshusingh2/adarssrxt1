@@ -123,7 +123,7 @@ async def account_login(bot: Client, m: Message):
         getstatusoutput(f"wget '{thumb}' -O 'thumb.jpg'") 
         thumb = "thumb.jpg"
     else:
-        thumb = "no"
+        thumb == "no"
     count = int(raw_text) if len(links) > 1 else 1
 
     for i in range(count - 1, len(links)):
@@ -181,7 +181,7 @@ async def account_login(bot: Client, m: Message):
             ytf = f"b[height<={raw_text2}][ext=mp4]/bv[height<={raw_text2}][ext=mp4]+ba[ext=m4a]/b[ext=mp4]" if "youtu" in url else f"b[height<={raw_text2}]/bv[height<={raw_text2}]+ba/b/bv+ba"
             cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
-            cc = f"**📂 ғɪʟᴇɴᴀᴍᴇ :** {str(count).zfill(3)}) {name1}.mkv\n\n**ʙᴀᴛᴄʜ** » {raw_text0}\n\n**ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ »** {MR}"
+            cc = f"**📂 ғɪʟᴇɴᴀᴍᴇ :** {str(count).zfill(3)}) {name1}.mp4\n\n**ʙᴀᴛᴄʜ** » {raw_text0}\n\n**ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ »** {MR}"
             cc1 = f"**📂 ғɪʟᴇɴᴀᴍᴇ :** {str(count).zfill(3)}) {name1}.pdf\n\n**ʙᴀᴛᴄʜ** » {raw_text0}\n\n**ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ »** {MR}"
 
             if "drive" in url:
