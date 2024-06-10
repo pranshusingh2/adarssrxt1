@@ -30,7 +30,7 @@ bot = Client(
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
-    await m.reply_text("**✌️ʜᴇʟʟᴏ, ᴍʏ ꜰʀɪᴇɴᴅ🌝.**\n\n**ɪ ᴀᴍ @mradarshr ʙᴏᴛ.**\n**ɪ ᴡɪʟʟ ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ᴛᴇxᴛ ꜰɪʟᴇ ʟɪɴᴋꜱ.**")
+    await m.reply_text("**✌️ʜᴇʟʟᴏ, ᴍʏ ꜰʀɪᴇɴᴅ🌝.**\n\n**𝐏𝐑𝐀𝐒𝐇𝐀𝐍𝐓 𝐒𝐈𝐍𝐆𝐇.**\n**ɪ ᴡɪʟʟ ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ᴛᴇxᴛ ꜰɪʟᴇ ʟɪɴᴋꜱ.**")
 
 
 @bot.on_message(filters.command("stop"))
@@ -38,7 +38,7 @@ async def restart_handler(_, m: Message):
     await m.reply_text("**Stopped**🚦", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-@bot.on_message(filters.command(["txt"]))
+@bot.on_message(filters.command(["psksir"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text('SEND ME TEXT TO CONVERT INTO TXT FILE⚡️')
     input: Message = await bot.listen(editable.chat.id)
@@ -58,10 +58,10 @@ async def account_login(bot: Client, m: Message):
     with open(file_name, "w") as file:
         file.write(raw_text)
     
-    await bot.send_document(chat_id=m.chat.id, document=file_name, caption="TXT File Converted by @mradarshr Bot")
+    await bot.send_document(chat_id=m.chat.id, document=file_name, caption="TXT File Converted by 𝐏𝐑𝐀𝐒𝐇𝐀𝐍𝐓 𝐒𝐈𝐍𝐆𝐇 🥇")
     os.remove(file_name)
 
-@bot.on_message(filters.command(["babu"]))
+@bot.on_message(filters.command(["𝐏𝐑𝐀𝐒𝐇𝐀𝐍656"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text('𝕋𝕆 ᴅᴏᴡɴʟᴏᴀᴅ ᴀ ᴛxᴛ ғɪʟᴇ 𝕤ᴇɴᴅ ʜᴇʀᴇ ⚡️')
     input: Message = await bot.listen(editable.chat.id)
@@ -209,7 +209,7 @@ async def account_login(bot: Client, m: Message):
                     time.sleep(e.x)
                     continue
             else:
-                Show = f"**⥥ 🄳🄾🅆🄽🄻🄾🄰🄳🄸🄽🄶⬇️⬇️... »**\n\n**📝Name »** `{name}\n❄Quality » {raw_text2}`\n\n**🔗URL »** @VEDxPW"
+                Show = f"**⥥ 🄳🄾🅆🄽🄻🄾🄰🄳🄸🄽🄶⬇️⬇️... »**\n\n**📝Name »** `{name}\n❄Quality » {raw_text2}`\n\n**🔗URL »** 🔗🔗🔗"
                 prog = await m.reply_text(Show)
                 res_file = await helper.download_video(url, cmd, name)
                 filename = res_file
@@ -226,7 +226,7 @@ async def account_login(bot: Client, m: Message):
             await m.reply_text(f"**Downloading Interrupted **\n {str(e)}\n**Name** » {name}\n**Link** » `{url}`")
             continue
 
-    await m.reply_text("❚█═ 𝔻𝕆𝕎ℕ𝕃𝕆𝔸𝔻𝕀ℕ𝔾 ℂ𝕆𝕄ℙ𝕃𝔼𝕋𝔼 ═█❚\n▼△▼△▼△ Λᴅᴀʀsʜ ʀᴀᴛʜᴀᴜʀ ▼△▼△▼△")
+    await m.reply_text("DONE ✅✅✅ BRO \n 𝐏𝐑𝐀𝐒𝐇𝐀𝐍𝐓 𝐒𝐈𝐍𝐆𝐇🇮🇳🇮🇳🇮🇳✅")
 
 print("Bot Started Sir")
 bot.run()
