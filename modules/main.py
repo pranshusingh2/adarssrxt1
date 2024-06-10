@@ -6,7 +6,6 @@ import time
 import asyncio
 import requests
 import subprocess
-import wget
 import core as helper
 from utils import progress_bar
 from vars import api_id, api_hash, bot_token
@@ -66,7 +65,7 @@ async def account_login(bot: Client, m: Message):
         await m.reply_text('Failed: ' + str(e))
 
 
-@bot.on_message(filters.command(["babu"]))
+@bot.on_message(filters.command(["ved"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text('𝕋𝕆 ᴅᴏᴡɴʟᴏᴀᴅ ᴀ ᴛxᴛ ғɪʟᴇ 𝕤ᴇɴᴅ ʜᴇʀᴇ ⚡️')
     input: Message = await bot.listen(editable.chat.id)
@@ -123,10 +122,9 @@ async def account_login(bot: Client, m: Message):
     await input6.delete(True)
     await editable.delete()
 
-    thumb_url = raw_text6
-    thumb = None
-    if thumb_url.startswith("http://") or thumb_url.startswith("https://"):
-        wget.download(thumb_url, f"./downloads/{m.chat.id}/thumb.jpg")
+    thumb = raw_text6
+    if thumb.startswith("http://") or thumb.startswith("https://"):
+        thumb = await helper.download(thumb, "thumb.jpg") 
         thumb = "thumb.jpg"
     else:
         thumb = "no"
